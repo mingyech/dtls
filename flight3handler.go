@@ -4,14 +4,14 @@ import (
 	"bytes"
 	"context"
 
-	"github.com/pion/dtls/v2/internal/ciphersuite/types"
-	"github.com/pion/dtls/v2/pkg/crypto/elliptic"
-	"github.com/pion/dtls/v2/pkg/crypto/prf"
-	"github.com/pion/dtls/v2/pkg/protocol"
-	"github.com/pion/dtls/v2/pkg/protocol/alert"
-	"github.com/pion/dtls/v2/pkg/protocol/extension"
-	"github.com/pion/dtls/v2/pkg/protocol/handshake"
-	"github.com/pion/dtls/v2/pkg/protocol/recordlayer"
+	"github.com/mingyech/dtls/v2/internal/ciphersuite/types"
+	"github.com/mingyech/dtls/v2/pkg/crypto/elliptic"
+	"github.com/mingyech/dtls/v2/pkg/crypto/prf"
+	"github.com/mingyech/dtls/v2/pkg/protocol"
+	"github.com/mingyech/dtls/v2/pkg/protocol/alert"
+	"github.com/mingyech/dtls/v2/pkg/protocol/extension"
+	"github.com/mingyech/dtls/v2/pkg/protocol/handshake"
+	"github.com/mingyech/dtls/v2/pkg/protocol/recordlayer"
 )
 
 func flight3Parse(ctx context.Context, c flightConn, state *State, cache *handshakeCache, cfg *handshakeConfig) (flightVal, *alert.Alert, error) { //nolint:gocognit

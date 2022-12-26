@@ -1,6 +1,6 @@
 package dtls
 
-import "github.com/pion/dtls/v2/pkg/protocol/recordlayer"
+import "github.com/mingyech/dtls/v2/pkg/protocol/recordlayer"
 
 type packet struct {
 	record                   *recordlayer.RecordLayer
