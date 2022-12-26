@@ -109,6 +109,7 @@ type handshakeConfig struct {
 	retransmitInterval          time.Duration
 	customCipherSuites          func() []CipherSuite
 	ellipticCurves              []elliptic.Curve
+	customClientHelloRandom     func() [handshake.RandomBytesLength]byte
 
 	onFlightState func(flightVal, handshakeState)
 	log           logging.LeveledLogger
