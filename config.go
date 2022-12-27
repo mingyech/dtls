@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/mingyech/dtls/v2/pkg/crypto/elliptic"
+	"github.com/mingyech/dtls/v2/pkg/protocol/handshake"
 	"github.com/pion/logging"
 )
 
@@ -168,6 +169,9 @@ type Config struct {
 	// the server. If this is unacceptable to the server then it may abort
 	// the handshake.
 	GetClientCertificate func(*CertificateRequestInfo) (*tls.Certificate, error)
+
+	// CustomClientHelloRandom optionaly allows the use of custom random bytes in the ClientHello message
+	CustomClientHelloRandom func() [handshake.RandomBytesLength]byte
 }
 
 func defaultConnectContextMaker() (context.Context, func()) {

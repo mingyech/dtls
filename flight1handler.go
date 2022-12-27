@@ -54,6 +54,10 @@ func flight1Generate(c flightConn, state *State, cache *handshakeCache, cfg *han
 		return nil, nil, err
 	}
 
+	if state.isClient && cfg.customClientHelloRandom != nil {
+		state.localRandom.RandomBytes = cfg.customClientHelloRandom()
+	}
+
 	extensions := []extension.Extension{
 		&extension.SupportedSignatureAlgorithms{
 			SignatureHashAlgorithms: cfg.localSignatureSchemes,
